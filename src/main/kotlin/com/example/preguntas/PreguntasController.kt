@@ -42,15 +42,17 @@ class PreguntaController (private val usersRepository: UsersRepository){
                 val pregunta = it.idpregunta.random()
                 it.idpregunta.remove(pregunta)
                 usersRepository.save(it)
-                return (
+                return PreguntasRepository2.lista[pregunta].toString()
+
+                /*(
                     PreguntasRepository.lista[pregunta].id.toString()+" "+
                     PreguntasRepository.lista[pregunta].pregunta+" \n"+
                     PreguntasRepository.lista[pregunta].respuesta1+" \n"+
                     PreguntasRepository.lista[pregunta].respuesta2+" \n"+
                     PreguntasRepository.lista[pregunta].respuesta3+" \n"+
                     PreguntasRepository.lista[pregunta].respuesta4
-                )
-                //PreguntasRepository2.lista[pregunta].toString()
+                )*/
+
 
             }
         }
